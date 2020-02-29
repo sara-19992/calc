@@ -2,8 +2,8 @@
 
 
 
-	    <property name="src.javacode.dir" location="./javacode"/>
-	    <property name="src.testcases.dir" location="./testcase"/>
+	    <property name="src.javacodes.dir" location="./src/javacode"/>
+	    <property name="src.testcase.dir" location="./src/testcase"/>
 	    <property name="result.dir" location="./target"/>
 	    <property name="result.javaclasses.dir" location="${result.dir}/classes"/>
 	    <property name="result.testclasses.dir" location="${result.dir}/testclasses"/>
@@ -19,14 +19,14 @@
 
 	    <target name="compile">
 	        <mkdir dir="${result.javaclasses.dir}"/>
-	        <javac srcdir="${src.javacode.dir}" destdir="${result.javaclasses.dir}" debug="true"  includeantruntime="false">
+	        <javac srcdir="${src.javacodes.dir}" destdir="${result.javaclasses.dir}" debug="true"  includeantruntime="false">
 	        </javac>
 	    </target>
 
 
 	    <target name="compile-testcases" depends="compile">
 	    	<mkdir dir="${result.testclasses.dir}"/>
-	    	<javac srcdir="${src.testcases.dir}"  destdir="${result.testclasses.dir}" debug="true" includeantruntime="false">
+	    	<javac srcdir="${src.testcase.dir}"  destdir="${result.testclasses.dir}" debug="true" includeantruntime="false">
 	    	            <classpath>
 
 	    	                <path refid="NecessaryLibrari"/>
